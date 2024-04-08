@@ -4,14 +4,11 @@ Sub FindAndCopyPDFFilesInShortcuts()
     Dim Shortcut As Object
     Dim DestinationFolder As String
     
-    ' Set the source folder to the current directory
     Set FileSystem = CreateObject("Scripting.FileSystemObject")
     Set SourceFolder = FileSystem.GetFolder(ThisWorkbook.Path)
     
-    ' Set the destination folder
     DestinationFolder = ThisWorkbook.Path & "\FilteredFiles\"
     
-    ' Check if the destination folder exists, if not, create it
     If Not FileSystem.FolderExists(DestinationFolder) Then
         FileSystem.CreateFolder (DestinationFolder)
     End If
